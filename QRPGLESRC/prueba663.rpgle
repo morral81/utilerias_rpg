@@ -1,7 +1,6 @@
 **free
 
-dcl-s variable1 char(10) inz;
-
+dcl-s variable1 char(10) inz('HOLA JUAN');
 
 exsr main;
 *inlr = *on;
