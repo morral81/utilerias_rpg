@@ -1,5 +1,5 @@
 **free
-//PASA DE MINUSCULAS A MAYUSCULAS POR SQL EMBEBIDO
+//EJEMPLO PARA IMPRIMIR EN EL JOBLOG
 //NOMBRE: JUAN GOMEZ
 //15-04-2022
 //_____________________________________________________________________________

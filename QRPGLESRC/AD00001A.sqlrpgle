@@ -1,5 +1,5 @@
 **free
-//PASA DE MINUSCULAS A MAYUSCULAS POR SQL EMBEBIDO
+//PASA DE MAYUSCULAS A MINUSCULAS POR SQL EMBEBIDO
 //NOMBRE: JUAN GOMEZ
 //15-04-2022
 //_____________________________________________________________________________
