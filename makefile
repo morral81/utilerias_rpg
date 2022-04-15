@@ -3,7 +3,7 @@ BIN_LIB = CMPSYS
 LIBLIST =$(BIN_LIB) DSGOGAMTJ1
 SHELL   =/QOpenSys/usr/bin/qsh
 
-all: ad00001.sqlrpgle ad00001a.sqlrpgle ad00001b.sqlrpgle
+all: BLXXXX1.rpgle
 
 %.rpgle:
 	 system  -s "CHGATR OBJ('/home/DSGOGAMTJ/DSGOGAMTJ1/QRPGLESRC/$*.rpgle') ATR(*CCSID) VALUE(1252)"
