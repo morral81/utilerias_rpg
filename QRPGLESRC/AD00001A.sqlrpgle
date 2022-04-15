@@ -1,4 +1,8 @@
 **free
+//PASA DE MINUSCULAS A MAYUSCULAS POR SQL EMBEBIDO
+//NOMBRE: JUAN GOMEZ
+//15-04-2022
+//_____________________________________________________________________________
 ctl-opt dftactgrp(*NO);                                
                                                        
 dcl-s string char(20) inz('SQL STATEMENT');            
