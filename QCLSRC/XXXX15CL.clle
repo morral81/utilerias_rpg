@@ -1,0 +1,23 @@
+*************** Principio de datos ************************************
+/*  nombre: Juan Manuel Gomez Gaytan                                */ 
+/*  fecha : 11/10/2021                                              */ 
+/*  descripcion: ejercicio15                                        */ 
+/********************************************************************/ 
+  pgm  parm(&ind1 &ind2)                                               
+                                                                       
+     dcl var(&ind1) type(*lgl)  len(1)                                 
+     dcl var(&ind2) type(*lgl)  len(1)                                 
+     dcl var(&msg)  type(*char) len(50)                                
+                                                                       
+     if cond(*not &ind1) then(do)                                      
+         chgvar var(&msg) value('if with do')                          
+         chgvar var(&msg) value('..........')                          
+     enddo                                                             
+     else   cmd(do)                                                    
+          if cond(&ind2) then(do)                                      
+               chgvar var(&msg) value('do with do')                    
+               chgvar var(&msg) value('..........')                    
+          enddo                                                        
+     enddo                                                             
+                                                                       
+  endpgm                                                               

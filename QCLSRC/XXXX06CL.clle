@@ -1,0 +1,22 @@
+*************** Principio de datos ***********************************
+/*  nombre: Juan Manuel Gomez Gaytan                                */
+/*  fecha : 02/10/2021                                              */
+/*  descripcion: ejercicio6                                         */
+/********************************************************************/
+  pgm                                                                 
+                                                                      
+     dcl    var(&cmd) type(*char) len(100)                            
+                                                                      
+     dltf   file(qtemp/output)                                        
+     monmsg msgid(cpf0000)                                            
+     crtpf  file(qtemp/output) rcdlen(100)                            
+                                                                      
+   /*chgvar var(&cmd) value('ls -s') */                               
+     chgvar var(&cmd) value('ls -1 > +                                
+                            /home/DSGOGAMTJ/newoutput.txt')           
+                                                                      
+     ovrdbf file(stdout) tofile(qtemp/output)                         
+     strqsh cmd(&cmd)                                                 
+                                                                      
+     dltovr file(*all)                                                
+  endpgm                                                              

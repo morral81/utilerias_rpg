@@ -1,0 +1,18 @@
+*************** Principio de datos ************************************
+/*  nombre: Juan Manuel Gomez Gaytan                                */ 
+/*  fecha : 01/10/2021                                              */ 
+/*  descripcion: ejercicio3                                         */ 
+/********************************************************************/ 
+  pgm                                                                  
+                                                                       
+       dcl var(&lib) type(*char) len(10) value('ESQUEMA')                 
+       dcl var(&arc) type(*char) len(10) value('ARCH1111')             
+                                                                       
+       chkobj     obj(&lib/&arc) objtype(*file)                        
+       monmsg     msgid(cpf0000) exec(goto cmdlbl(endclpgm))           
+                                                                       
+       sndpgmmsg msg('Hello World..!!')                                
+                                                                       
+  endclpgm:                                                            
+       sndpgmmsg msg('fin pgm')                                        
+             endpgm                                                    

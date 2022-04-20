@@ -1,0 +1,18 @@
+*************** Principio de datos ***********************************
+/*  nombre: Juan Manuel Gomez Gaytan                                */
+/*  fecha : 10/10/2021                                              */
+/*  descripcion: ejercicio12                                        */
+/********************************************************************/
+  pgm                                                                 
+                                                                      
+     dcl var(&loop) type(*int)   len(4)                               
+     dcl var(&msg)  type(*char)  len(50)                              
+                                                                      
+    dofor var(&loop) from(2) to(14) by(3)                             
+       chgvar var(&msg) value('INTERATION' *cat %char(&loop))         
+    enddo                                                             
+                                                                      
+    dofor var(&loop) from(1) to(5)                                    
+       chgvar var(&msg) value('INTERATION' *cat %char(&loop))         
+    enddo                                                             
+  endpgm                                                              

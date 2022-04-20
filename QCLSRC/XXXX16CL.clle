@@ -1,0 +1,19 @@
+*************** Principio de datos ***********************************
+/*  nombre: Juan Manuel Gomez Gaytan                                */
+/*  fecha : 12/10/2021                                              */
+/*  descripcion: ejercicio16                                        */
+/********************************************************************/
+  pgm                                                                 
+                                                                      
+     dcl var(&string)     type(*char) len(2000) +                     
+                          value('Calculate the data text length')     
+     dcl var(&stringlen)  type(*dec)  len(5 0)                        
+     dcl var(&stringlen2) type(*dec)  len(5 0)                        
+                                                                      
+     rtvmsg msgid(cpf9897) msgf(qcpfmsg) msgdta(&string) +            
+            msglen(&stringlen)                                        
+                                                                      
+     rtvmsg msgid(usr0001) msgf(pggjxxxxxx/msgf1) +                   
+            msgdta(&string) msglen(&stringlen2)                       
+                                                                      
+  endpgm                                                              

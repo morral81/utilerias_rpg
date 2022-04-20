@@ -1,0 +1,29 @@
+*************** Principio de datos ****************************************
+/*  nombre: Juan Manuel Gomez Gaytan                                */     
+/*  fecha : 05/10/2021                                              */     
+/*  descripcion: ejercicio9                                         */     
+/********************************************************************/     
+  pgm parm(&ind1 &ind2)                                                    
+                                                                           
+     dcl var(&ind1)      type(*lgl)  len(1)                                
+     dcl var(&ind2)      type(*lgl)  len(1)                                
+     dcl var(&msg)       type(*char) len(50)                               
+                                                                           
+     if  cond(&ind1 *and &ind2) then(do)                                   
+              chgvar var(&msg) value('First')                              
+              chgvar var(&msg) value('Second')                             
+              chgvar var(&msg) value('Third')                              
+              chgvar var(&msg) value('Fourth')                             
+     enddo                                                                 
+                                                                           
+     if  cond(&ind1) then(do)                                              
+              chgvar var(&msg) value('First')                              
+              chgvar var(&msg) value('Second')                             
+              if  cond(&ind2) then(do)                                     
+                   chgvar var(&msg) value('Nesting Do groups demo')        
+                   chgvar var(&msg) value('Third')
+                                      chgvar var(&msg) value('Fourth')      
+              enddo                                      
+     enddo                                               
+                                                         
+  endpgm                                                                       

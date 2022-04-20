@@ -1,0 +1,18 @@
+*************** Principio de datos ***********************************
+/*  nombre: Juan Manuel Gomez Gaytan                                */
+/*  fecha : 04/10/2021                                              */
+/*  descripcion: ejercicio8                                         */
+/********************************************************************/
+  pgm  parm(&in_date &fromfmt &tofmt &tosep)                          
+                                                                      
+     dcl var(&in_date)   type(*char) len(30)                          
+     dcl var(&fromfmt)   type(*char) len(10)                          
+     dcl var(&tofmt)     type(*char) len(10)                          
+     dcl var(&tosep)     type(*char) len(10)                          
+     dcl var(&out_date)  type(*char) len(10)                          
+                                                                      
+    /*convert date from any format to any ohter format*/              
+     cvtdat date(&in_date) tovar(&out_date) +                         
+            fromfmt(&fromfmt) tofmt(&tofmt) tosep(&tosep)             
+                                                                      
+  endpgm                                                              

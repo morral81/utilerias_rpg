@@ -1,0 +1,21 @@
+*************** Principio de datos ***********************************
+/*  nombre: Juan Manuel Gomez Gaytan                                */
+/*  fecha : 01/10/2021                                              */
+/*  descripcion: ejercicio3                                         */
+/********************************************************************/
+  pgm  parm(&ind1 &ind2)                                              
+                                                                      
+     dcl var(&ind1) type(*lgl)   len(1)                               
+     dcl var(&ind2) type(*lgl)   len(1)                               
+     dcl var(&msg)  type(*char)  len(50)                              
+                                                                      
+    select                                                            
+     when cond(&ind1 *and &ind2) then(chgvar var(&msg) value('first'))
+     when cond(*not &ind1) then(do)                                   
+           chgvar var(&msg)   value('execute do program')             
+           chgvar var(&msg)   value('...........')                    
+          enddo                                                       
+     otherwise cmd(chgvar var(&msg)   value('quit'))                  
+    endselect                                                         
+                                                                      
+  endpgm                                                              

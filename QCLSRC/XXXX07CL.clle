@@ -1,0 +1,32 @@
+*************** Principio de datos ***********************************
+/*  nombre: Juan Manuel Gomez Gaytan                                */
+/*  fecha : 04/10/2021                                              */
+/*  descripcion: ejercicio7                                         */
+/********************************************************************/
+  pgm                                                                 
+                                                                      
+     dcl var(&myclass)   type(*char) len(30)  value('Prueba3')        
+     dcl var(&java)      type(*char) len(512)                         
+     dcl var(&parm)      type(*char) len(512)                         
+     dcl var(&classpath) type(*char) len(512) value('-cp +            
+                         /home/DSGOGAMTJ/')                           
+     dcl var(&myparm1)   type(*char) len(10)  value('Winner')         
+     dcl var(&myparm2)   type(*char) len(20)  value('Hotdog')         
+     dcl var(&myparm3)   type(*char) len(20)  value('Pizza')          
+                                                                      
+     dltf   file(qtemp/javatst)                                       
+     monmsg msgid(cpf0000)                                            
+     crtpf  file(qtemp/javatst) rcdlen(132) +                         
+     text('JAVA RUN') maxmbrs(*NOMAX)                                 
+                                                                      
+     ovrdbf file(STDOUT) tofile(qtemp/JAVATST)                        
+                                                                      
+     chgvar var(&parm) value(&parm *bcat &myparm1)                    
+     chgvar var(&parm) value(&parm *bcat &myparm2)             
+     chgvar var(&parm) value(&parm *bcat &myparm3)             
+     chgvar var(&java) value('java ' *bcat &classpath *bcat +  
+                         &myclass *bcat &parm)                 
+                                                               
+     qsh cmd(&java)                                            
+                                                               
+  endpgm                                                       

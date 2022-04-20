@@ -1,0 +1,22 @@
+*************** Principio de datos ************************************
+/*  nombre: Juan Manuel Gomez Gaytan                                */ 
+/*  fecha : 05/10/2021                                              */ 
+/*  descripcion: ejercicio9                                         */ 
+/********************************************************************/ 
+  pgm                                                                  
+                                                                       
+     dcl var(&number)    type(*dec)  len(5 0) value(6)                 
+     dcl var(&lgl1)      type(*lgl)  len(1)   value('0')               
+     dcl var(&lgl2)      type(*lgl)  len(1)   value('1')               
+     dcl var(&msg)       type(*char) len(20)                           
+                                                                       
+     if  cond(&number *GT 5) then(chgvar var(&msg) +                   
+                                  value('Greater'))                    
+                                                                       
+     if  cond(&lgl1 *EQ '0' *and &lgl2 *eq '1') +                      
+         then(chgvar var(&msg) value('True'))                          
+                                                                       
+     if  cond(*not &lgl1 *and &lgl2) +                                 
+         then(chgvar var(&msg) value('False'))                         
+                                                                       
+  endpgm                                                               

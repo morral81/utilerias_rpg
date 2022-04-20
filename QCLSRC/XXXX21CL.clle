@@ -1,0 +1,16 @@
+*************** Principio de datos *****************************************
+/*  nombre: Juan Manuel Gomez Gaytan                                */      
+/*  fecha : 12/10/2021                                              */      
+/*  descripcion: ejercicio20                                        */      
+/********************************************************************/      
+  pgm                                                                       
+         dcl var(&goto) type(*char) len(10) value('HELLO')                  
+                                                                            
+ start:  chgvar var(&goto) value('LMNOP')                                   
+         goto   cmdlbl(mid)                                                 
+         chgvar var(&goto) value('HEDDD')                                   
+                                                                            
+ mid:    if cond(&goto *eq 'LMNOP') then(goto cmdlbl(end))                  
+         chgvar var(&goto) value('COMPLETE')                                
+                                                                            
+ end:    endpgm                                                             

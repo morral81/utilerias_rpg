@@ -1,0 +1,23 @@
+*************** Principio de datos ***********************************
+/*  nombre: Juan Manuel Gomez Gaytan                                */
+/*  fecha : 12/10/2021                                              */
+/*  descripcion: ejercicio17                                        */
+/********************************************************************/
+  pgm                                                                 
+                                                                      
+     dcl var(&datastruct) type(*char) len(50)                         
+     dcl var(&fld1)       type(*dec)  stg(*defined) len(10) +         
+                          defvar(&datastruct 1)                       
+     dcl var(&fld2)       type(*char) stg(*defined) len(20) +         
+                          defvar(&datastruct 11)                      
+     dcl var(&fld3)       type(*int)  stg(*defined) len(4)  +         
+                          defvar(&datastruct 31)                      
+     dcl var(&fld4)       type(*char) stg(*defined) len(16) +         
+                          defvar(&datastruct 35)                      
+                                                                      
+     chgvar var(&fld1) value(252545)                                  
+     chgvar var(&fld2) value('HELLO')                                 
+     chgvar var(&fld3) value(1234)                                    
+     chgvar var(&fld4) value('LAST FIELD')                            
+                                                                      
+  endpgm                                                              

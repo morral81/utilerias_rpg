@@ -1,0 +1,31 @@
+*************** Principio de datos *************************************
+/*  nombre: Juan Manuel Gomez Gaytan                                */  
+/*  fecha : 01/10/2021                                              */  
+/*  descripcion: ejercicio2                                         */  
+/********************************************************************/  
+  pgm                                                                   
+      dcl var(&num1) type(*dec)  len(3 0) value(1)                      
+      dcl var(&num2) type(*dec)  len(3 0) value(1)                      
+      dcl var(&cnt)  type(*int)                                         
+                                                                        
+ label1:                                                                
+         if (&num1 *LE 5) do                                            
+             sndpgmmsg msg('Hello World')                               
+             chgvar var(&num1) value(&num1 + 1)                         
+             goto label1                                                
+         enddo                                                          
+                                                                        
+    /*   dowhile cond(&num2 *LE 5)                */                    
+    /*       sndpgmmsg msg('Hello World 2')       */                    
+    /*       chgvar var(&num2) value(&num2 + 1)   */                    
+    /*   enddo                                    */                    
+                                                                        
+         dountil cond(&num2 *LE 5)                                      
+             sndpgmmsg msg('Hello World 3')                             
+             chgvar var(&num2) value(&num2 + 1)      
+         enddo                                       
+                                                     
+         dofor   var(&cnt) from(1) to(10) by(2)      
+             sndpgmmsg msg('inside for')             
+         enddo                                       
+  endpgm                                             

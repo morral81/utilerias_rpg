@@ -1,0 +1,16 @@
+*************** Principio de datos ***********************************
+/*  nombre: Juan Manuel Gomez Gaytan                                */
+/*  fecha : 12/10/2021                                              */
+/*  descripcion: ejercicio20                                        */
+/********************************************************************/
+  pgm                                                                 
+                                                                      
+         dcl var(&ptr)  type(*ptr)                                    
+         dcl var(&var1) type(*char) len(10) value('IBMICLASS')        
+         dcl var(&var2) type(*char) len(10) value('CHANNEL')          
+                                                                      
+         chgvar var(&ptr) value(%address(&var1))                      
+         return                                                       
+         chgvar var(&ptr) value(%address(&var2))                      
+                                                                      
+  endpgm                                                              

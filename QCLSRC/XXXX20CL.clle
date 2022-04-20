@@ -1,0 +1,16 @@
+*************** Principio de datos *************************************
+/*  nombre: Juan Manuel Gomez Gaytan                                */  
+/*  fecha : 12/10/2021                                              */  
+/*  descripcion: ejercicio20                                        */  
+/********************************************************************/  
+  pgm  parm(&opcional)                                                  
+                                                                        
+     dcl var(&opcional)  type(*char) len(1)                             
+     dcl var(&test)      type(*char) len(1)                             
+                                                                        
+     chgvar var(&test) value(&opcional)                                 
+     monmsg msgid(mch3601) exec(do)                                     
+          sndpgmmsg msg('programa run successfully')                    
+     enddo                                                              
+                                                                        
+  endpgm                                                                

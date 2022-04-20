@@ -1,0 +1,25 @@
+*************** Principio de datos ***********************************
+/*  nombre: Juan Manuel Gomez Gaytan                                */
+/*  fecha : 12/10/2021                                              */
+/*  descripcion: ejercicio17                                        */
+/********************************************************************/
+  pgm                                                                 
+                                                                      
+     dcl var(&outerloop)  type(*dec)  len(5 0) value(1)               
+     dcl var(&innerloop)  type(*dec)  len(5 0) value(0)               
+     dcl var(&msg)        type(*char) len(20)                         
+                                                                      
+ outerleep: dowhile cond(&outerloop < 5)                              
+            chgvar var(&msg) value('Outer loop')                      
+            chgvar var(&msg) value('Execution')                       
+                                                                      
+            chgvar var(&innerloop) value(0)                           
+                                                                      
+ innerleep: dowhile cond(&innerloop < 6)                              
+            chgvar var(&innerloop) value(&innerloop +1)               
+            if cond(&innerloop = 2) then(iterate)                     
+            if cond(&innerloop = 4) then(leave)                       
+            chgvar var(&msg) value('Inner loop')                      
+            chgvar var(&msg) value('Execution')                       
+            enddo 
+endpgm                                                     

@@ -1,0 +1,20 @@
+/*  nombre: Juan Manuel Gomez Gaytan                                */ 
+/*  fecha : 01/10/2021                                              */ 
+/*  descripcion: ejercicio1                                         */ 
+/********************************************************************/ 
+  pgm                                                                  
+                                                                       
+      dcl var(&num1) type(*dec)  len(3 0) value(10)                    
+      dcl var(&num2) type(*dec)  len(3 0)                              
+  /*  dcl var(&char) type(*char) len(3) */                             
+                                                                       
+      sndpgmmsg msg('Hello World..!!')                                 
+                                                                       
+      chgvar var(&num2) value(20)                                      
+      if (&num1 *GT &num2) do                                          
+           sndpgmmsg msg('num1 is bigger')                             
+      enddo                                                            
+      else cmd(do)                                                     
+           sndpgmmsg msg('num2 is bigger')                             
+      enddo                                                            
+  endpgm                                                               
